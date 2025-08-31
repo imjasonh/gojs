@@ -4,8 +4,8 @@ tmp_dir = "bin"
 
 [build]
   args_bin = ["-port=8080"]
-  bin = "./tmp/main"
-  cmd = "go generate ./frontend/generate_dev.go && go build -o ./tmp/main ."
+  bin = "./bin/gots"
+  cmd = "go generate ./frontend/generate_dev.go && go build -o ./bin/main ."
   delay = 1000
   exclude_dir = ["assets", "bin", "vendor", "testdata", "frontend/node_modules"]
   exclude_file = []
