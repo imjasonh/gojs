@@ -6,7 +6,7 @@ A sample Go binary with embedded TypeScript frontend using `go:embed`.
 
 - TypeScript frontend compiled to JavaScript with Webpack
 - Go server with embedded frontend assets
-- Hot reload development with [air](github.com/air-verse/air)
+- Hot reload development with [air](https://github.com/air-verse/air)
 - Single binary or Docker image deployment
 
 ## Development
