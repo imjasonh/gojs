@@ -1,4 +1,4 @@
-module github.com/imjasonh/gojs
+module github.com/imjasonh/gots
 
 go 1.25.0
 

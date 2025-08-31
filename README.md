@@ -21,7 +21,7 @@ Changes to any file triggers a rebuild and reload, which takes ~3 seconds.
 
 ```bash
 make release  # Build standalone release binary (~7.7 MB)
-./bin/gojs    # Run binary
+./bin/gots    # Run binary
 
 # Or run directly:
 make run    # Generate assets and run

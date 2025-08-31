@@ -12,7 +12,7 @@ generate-prod:
 
 # Build the Go binary (production)
 release: generate-prod
-	go build -o bin/gojs .
+	go build -o bin/gots .
 
 # Run the server (regenerates assets first)
 run: generate-dev
@@ -27,4 +27,4 @@ image: generate-prod
 
 # Clean generated files
 clean:
-	rm -rf assets/ frontend/node_modules/ frontend/package-lock.json gojs
+	rm -rf assets/ frontend/node_modules/ frontend/package-lock.json gots
