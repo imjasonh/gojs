@@ -1,13 +1,13 @@
 root = "."
 testdata_dir = "testdata"
-tmp_dir = "tmp"
+tmp_dir = "bin"
 
 [build]
   args_bin = ["-port=8080"]
   bin = "./tmp/main"
-  cmd = "go generate ./... && go build -o ./tmp/main ."
+  cmd = "go generate ./frontend/generate_dev.go && go build -o ./tmp/main ."
   delay = 1000
-  exclude_dir = ["assets", "tmp", "vendor", "testdata", "frontend/node_modules"]
+  exclude_dir = ["assets", "bin", "vendor", "testdata", "frontend/node_modules"]
   exclude_file = []
   exclude_regex = ["_test.go"]
   exclude_unchanged = false

@@ -1,25 +1,29 @@
-.PHONY: generate build run dev clean install-air
+.PHONY: generate generate-dev generate-prod build run dev clean install-air
 
 KO_DOCKER_REPO?=ttl.sh/jason
 
-# Generate frontend assets
-generate:
-	go generate ./...
+# Generate frontend assets (development mode)
+generate-dev:
+	go generate ./frontend/generate_dev.go
 
-# Build the Go binary
-build: generate
-	go build -o gojs .
+# Generate frontend assets (production mode)
+generate-prod:
+	go generate ./frontend/generate_prod.go
+
+# Build the Go binary (production)
+release: generate-prod
+	go build -o bin/gojs .
 
 # Run the server (regenerates assets first)
-run: generate
+run: generate-dev
 	go run . -port=8080
 
 # Development mode - watch for changes and auto-reload
 dev:
 	go tool air
 
-image:
-	KO_DOCKER_REPO=$(KO_DOCKER_REPO) ko build
+image: generate-prod
+	KO_DOCKER_REPO=$(KO_DOCKER_REPO) ko build -P --sbom=none
 
 # Clean generated files
 clean:

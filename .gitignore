@@ -30,5 +30,5 @@ assets/
 .DS_Store
 Thumbs.db
 
-# For air temp files
-tmp/
+# For release binaries and air temp files
+bin/

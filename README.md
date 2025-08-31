@@ -20,8 +20,8 @@ Changes to any file triggers a rebuild and reload, which takes ~3 seconds.
 ## Build & Run
 
 ```bash
-make build  # Build standalone binary
-./gojs      # Run binary
+make release  # Build standalone release binary (~7.7 MB)
+./bin/gojs    # Run binary
 
 # Or run directly:
 make run    # Generate assets and run
