@@ -1,4 +1,6 @@
-.PHONY: generate build run dev clean
+.PHONY: generate build run dev clean install-air
+
+KO_DOCKER_REPO?=ttl.sh/jason
 
 # Generate frontend assets
 generate:
@@ -12,9 +14,12 @@ build: generate
 run: generate
 	go run . -port=8080
 
-# Development mode - watch for changes
-dev: generate
-	go run . -port=8080
+# Development mode - watch for changes and auto-reload
+dev:
+	go tool air
+
+image:
+	KO_DOCKER_REPO=$(KO_DOCKER_REPO) ko build
 
 # Clean generated files
 clean:

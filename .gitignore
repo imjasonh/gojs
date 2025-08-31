@@ -29,3 +29,6 @@ assets/
 # OS files
 .DS_Store
 Thumbs.db
+
+# For air temp files
+tmp/
